@@ -29,6 +29,25 @@ class App extends Component {
     })
   }
 
+  clearList(){
+
+    let emptyArray = [];
+
+    this.setState({
+      list: emptyArray
+    })
+  }
+
+
+  removeItem(val, key){
+    console.log(val+ key);
+    let listArray = this.state.list;
+    listArray.splice(key,1);
+
+    this.setState({
+      list: listArray
+    })
+  }
 
   render() {
     return (
@@ -41,9 +60,10 @@ class App extends Component {
             type="text"
             value={this.state.userInput}></input>
           <button onClick={ ()=> this.addToList(this.state.userInput) }>Enter</button>
-
+          <button onClick={ ()=> this.clearList() }>Clear List</button>
           <ul id="listItems">
-            {this.state.list.map( (val)=> <li>{val}</li>)}
+            {this.state.list.map( (val, key)=>
+              <li>{val} <button onClick={ ()=> this.removeItem(val, key)}>Remove</button></li>)}
           </ul>
         </div>
       </div>

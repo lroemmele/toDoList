@@ -6,10 +6,10 @@
 #appContent {
   margin: auto;
   margin-top: 30px;
-
   width: 500px;
   height: auto;
-  background-color: tan;
+  border: 2px solid blue;
+
 }
 
 #listItems {
