@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
@@ -31,21 +30,22 @@ class App extends Component {
   }
 
 
-
-
   render() {
     return (
       <div className="App">
-        <input
-          placeholder= "Enter Somthing To Do"
-          onChange= { (e)=>this.changeUserInput(e.target.value)}
-          type="text"
-          value={this.state.userInput}></input>
-        <button onClick={ ()=> this.addToList(this.state.userInput) }>Enter</button>
+        <div id="appContent">
+         <h1>TO DO LIST</h1>
+          <input
+            placeholder= "Enter Somthing To Do"
+            onChange= { (e)=>this.changeUserInput(e.target.value)}
+            type="text"
+            value={this.state.userInput}></input>
+          <button onClick={ ()=> this.addToList(this.state.userInput) }>Enter</button>
 
-        <ul>
-          {this.state.list.map( (val)=> <li>{val}</li>)}
-        </ul>
+          <ul id="listItems">
+            {this.state.list.map( (val)=> <li>{val}</li>)}
+          </ul>
+        </div>
       </div>
     );
   }
