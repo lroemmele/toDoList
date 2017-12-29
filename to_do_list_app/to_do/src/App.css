@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family: cursive;
 
 }
 
@@ -9,11 +10,22 @@
   width: 500px;
   height: auto;
   border: 2px solid blue;
-
+  background-color: white;
 }
 
 #listItems {
   list-style-type: none;
+  word-wrap: break-word;
+  padding: 2px;
+  margin: 10px;
+}
+
+li {
+  padding: 5px;
+}
+
+button {
+  cursor: pointer;  
 }
 
 @keyframes App-logo-spin {

@@ -49,6 +49,8 @@ class App extends Component {
     })
   }
 
+
+
   render() {
     return (
       <div className="App">
@@ -60,11 +62,13 @@ class App extends Component {
             type="text"
             value={this.state.userInput}></input>
           <button onClick={ ()=> this.addToList(this.state.userInput) }>Enter</button>
-          <button onClick={ ()=> this.clearList() }>Clear List</button>
+
           <ul id="listItems">
             {this.state.list.map( (val, key)=>
               <li>{val} <button onClick={ ()=> this.removeItem(val, key)}>Remove</button></li>)}
           </ul>
+          <button onClick={ ()=> this.clearList() }>Clear List</button>
+          <button>Save List</button>
         </div>
       </div>
     );
