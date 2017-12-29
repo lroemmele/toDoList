@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
+
 class App extends Component {
 
   constructor(props){
@@ -11,13 +12,14 @@ class App extends Component {
       list: []
     }
   }
-
+ //sets state of userInput with user input, console logs user input
   changeUserInput(input){
     this.setState({
       userInput: input
     }, ()=> console.log(input))
   }
 
+//creates a temp array to store changes in list and push new items on the the array, then updates list from listArray
   addToList(input){
     let listArray = this.state.list;
 
@@ -29,6 +31,7 @@ class App extends Component {
     })
   }
 
+//creates temmp empty array, then sets list to emptyArray
   clearList(){
 
     let emptyArray = [];
@@ -38,7 +41,7 @@ class App extends Component {
     })
   }
 
-
+//recieve value and key of selected list item, creates temp array and removes value at that index, then sets list to listarray
   removeItem(val, key){
     console.log(val+ key);
     let listArray = this.state.list;
@@ -68,7 +71,7 @@ class App extends Component {
               <li>{val} <button onClick={ ()=> this.removeItem(val, key)}>Remove</button></li>)}
           </ul>
           <button onClick={ ()=> this.clearList() }>Clear List</button>
-          <button>Save List</button>
+
         </div>
       </div>
     );
