@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-
+import {PrintButton} from './Print.js';
 
 class App extends Component {
 
@@ -50,6 +50,7 @@ class App extends Component {
     });
   }
 
+//moves selected value to new index of listArray, then sets list equal to listArray
   moveItem(val, key, newKey){
     //console.log("VALUE " + val + " KEY " + key + " NEWKEY " + direction);
     let listArray = [...this.state.list];
@@ -80,7 +81,7 @@ class App extends Component {
               <button onClick={ ()=> this.moveItem(val, key, key - 1)}>+</button><button onClick={  ()=> this.moveItem(val, key, key + 1) }>-</button></li>)}
           </ul>
           <button onClick={ ()=> this.clearList() }>Clear List</button>
-
+          <PrintButton listPrint={this.state.list} ></PrintButton>
         </div>
       </div>
     );
